@@ -6,7 +6,16 @@ document.addEventListener("DOMContentLoaded", function() {
     var edad = parseInt(document.getElementById("edad").value);
     var saludoElement = document.getElementById("saludo");
 
-    var saludo = "¡Hola, ";
+    var saludo = "¡";
+
+    var horaActual = new Date().getHours();
+    if (horaActual >= 5 && horaActual < 12) {
+      saludo += "Buenos días, ";
+    } else if (horaActual >= 12 && horaActual < 18) {
+      saludo += "Buenas tardes, ";
+    } else {
+      saludo += "Buenas noches, ";
+    }
 
     if (edad > 30) {
       if (genero === "masculino") {
