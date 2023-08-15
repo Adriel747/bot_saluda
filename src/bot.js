@@ -3,14 +3,20 @@ document.addEventListener("DOMContentLoaded", function() {
   saludarButton.addEventListener("click", function() {
     var nombre = document.getElementById("nombre").value;
     var genero = document.getElementById("genero").value;
+    var edad = parseInt(document.getElementById("edad").value);
     var saludoElement = document.getElementById("saludo");
-    
-    if (genero === "masculino") {
-      saludoElement.textContent = "¡Hola, Señor " + nombre + "!";
-    } else if (genero === "femenino") {
-      saludoElement.textContent = "¡Hola, Señora " + nombre + "!";
-    } else {
-      saludoElement.textContent = "¡Hola genero fluido, " + nombre + "!";
+
+    var saludo = "¡Hola, ";
+
+    if (edad > 30) {
+      if (genero === "masculino") {
+        saludo += "Señor ";
+      } else if (genero === "femenino") {
+        saludo += "Señora ";
+      }
     }
+
+    saludo += nombre + "!";
+    saludoElement.textContent = saludo;
   });
 });
