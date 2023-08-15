@@ -1,8 +1,19 @@
 <html>
   <body>
     <center>
-      
-    <h1 id="saludo"> <b> !!HOLA!! </b></h1>
+      <form id="datosForm">
+        <label for="nombre">Ingresa tu nombre:</label>
+        <input type="text" id="nombre" required><br>
+        <label for="genero">Selecciona tu género:</label>
+        <select id="genero">
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+          <option value="otro">Otro</option>
+        </select><br>
+        <button type="button" id="saludarButton">Saludar</button>
+      </form>
+      <p id="saludo"></p>
+
     </center>
    
     <script src="./src/bot.js" ></script>
